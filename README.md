@@ -16,8 +16,14 @@ template method pattern is useful.
 
 Every request has different requirements, services, and render types. Here let's assume that algorithm step 1 (getting request)
 will be the same throughout your web service. Using the template pattern, you can provide little boxes to the developer
-who can fill in with the logic they needs. you can (2) process a request differently,
+who can fill in with the logic they need. you can (2) process a request differently,
 (3) run different services, or even (4) render results differently like file format or json format.
 
 Another good example of this pattern is one of the java's collection method `Array.sorts()`. This method uses
 `Comparable` interface inside it. So you can override `compareTo` method in you classes to modify the behavior of sort.
+
+## Inversion of Control
+Please note that this is related to the inversion of control. Another word, "Don't call me, we will call you." principle.
+Why is this inversion of control? If you see the `BakeryMaker` code, you can notice that `make` method will be called
+from `BakeryMaker` definition. But its sub-classes never call `make` function. They are just providing some method to parent
+class so that It can use the required part as it proceeds.
