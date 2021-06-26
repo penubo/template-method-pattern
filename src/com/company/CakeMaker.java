@@ -1,29 +1,16 @@
 package com.company;
 
-public class CakeMaker {
+public class CakeMaker extends BakeryMaker {
     public CakeMaker() {
     }
 
-    public void make() {
-        prepareIngredients();
-        createDough();
-        decorate();
-        pack();
-    }
-
-    private void pack() {
-        System.out.println("packing the cake");
-    }
-
-    private void decorate() {
+    @Override
+    public void decorate() {
         System.out.println("decorating the cake");
     }
 
-    private void createDough() {
-        System.out.println("creating cake dough");
-    }
-
-    private void prepareIngredients() {
+    @Override
+    public void prepareIngredients() {
         System.out.println("prepare ingredients for cake.");
     }
 }
